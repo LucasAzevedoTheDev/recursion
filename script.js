@@ -10,3 +10,15 @@ function fibs(n) {
 
   return array;
 }
+
+function fibsRec(n) {
+  if (n <= 0) return [];
+  if (n === 1) return [0];
+  if (n === 2) return [0, 1];
+
+  const previous = fibsRec(n - 1);
+  const result = previous.at(-1) + previous.at(-2);
+  previous.push(result);
+  return previous;
+}
+
